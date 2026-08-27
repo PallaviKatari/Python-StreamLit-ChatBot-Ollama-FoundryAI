@@ -3,13 +3,13 @@ import base64
 from openai import OpenAI
 
 # Azure AI Foundry endpoint
-endpoint = "https://kpmg-foundry-resource-demo.services.ai.azure.com/openai/v1"
+endpoint = ""
 
 # Your deployment name
 deployment_name = "gpt-image-2"
 
 # Replace with your actual API key
-api_key = "2O8C2cDLymW3C7oHonaWjTBaonci6rR4fToQfdX112uJbI6XZXyNJQQJ99CHACHYHv6XJ3w3AAAAACOGm4HQ"
+api_key = ""
 
 # Initialize client with API key
 client = OpenAI(
