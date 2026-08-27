@@ -291,7 +291,7 @@ AZURE_TENANT_ID=your-tenant-id
 ```bash
 # Create virtual environment
 python -m venv venv
-source venv/Scripts/activate  # On Windows: venv\Scripts\activate
+source venv/Scripts/activate  # On Windows: .\venv\Scripts\activate
 
 # Install required packages
 pip install -r requirements.txt

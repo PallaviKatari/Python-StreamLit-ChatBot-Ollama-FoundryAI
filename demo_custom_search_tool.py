@@ -46,7 +46,7 @@ tools = [
 response = client.responses.create(
     model=model_deployment,
     instructions="You are an assistant that answers HR policy questions using the custom_search tool.",
-    input="What is the leave policy?",
+    input="leave policy",
     tools=tools
 )
 

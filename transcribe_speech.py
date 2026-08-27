@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 # Import namespaces
 from openai import AzureOpenAI
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-
 
 def main():
     try:
@@ -16,20 +14,17 @@ def main():
         # Get Configuration Settings
         load_dotenv()
         endpoint = os.getenv("FOUNDRY_ENDPOINT")
-        model_deployment = os.getenv("MODEL_NAME1")
-        file_path = Path(__file__).parent / "speech.mp3"
+        model_deployment = os.getenv("MODEL_NAME1")   # e.g., gpt-4o-transcribe
+        api_key = os.getenv("AZURE_OPENAI_API_KEY")   # store your key in .env
+        file_path = Path(__file__).parent / "kpmg.mp3"
         
         # Play the speech file
         playsound(file_path)
         
-        # Create the Azure OpenAI client
-        token_provider = get_bearer_token_provider(
-            DefaultAzureCredential(), "https://ai.azure.com/.default"
-        )
-
+        # Create the Azure OpenAI client using API key
         client = AzureOpenAI(
             azure_endpoint=endpoint,
-            azure_ad_token_provider=token_provider,
+            api_key=api_key,
             api_version="2025-03-01-preview"
         )
 

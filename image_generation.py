@@ -1,24 +1,20 @@
 import os
 import base64
-
 from openai import OpenAI
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
 # Azure AI Foundry endpoint
-endpoint = ""
+endpoint = "https://kpmg-foundry-resource-demo.services.ai.azure.com/openai/v1"
 
 # Your deployment name
 deployment_name = "gpt-image-2"
 
-# Authentication (same as your working script)
-token_provider = get_bearer_token_provider(
-    DefaultAzureCredential(),
-    "https://ai.azure.com/.default"
-)
+# Replace with your actual API key
+api_key = "2O8C2cDLymW3C7oHonaWjTBaonci6rR4fToQfdX112uJbI6XZXyNJQQJ99CHACHYHv6XJ3w3AAAAACOGm4HQ"
 
+# Initialize client with API key
 client = OpenAI(
     base_url=endpoint,
-    api_key=token_provider
+    api_key=api_key
 )
 
 # Create images folder
@@ -47,9 +43,7 @@ while True:
             size="1024x1024"
         )
 
-        image_bytes = base64.b64decode(
-            img.data[0].b64_json
-        )
+        image_bytes = base64.b64decode(img.data[0].b64_json)
 
         image_count += 1
         file_name = f"images/output_{image_count}.png"

@@ -1,14 +1,14 @@
-import os
-from dotenv import load_dotenv
-from openai import OpenAI
+import os # access your environments variables
+from dotenv import load_dotenv # load environment variables from a .env file
+from openai import OpenAI # Access the Azure OpenAI client
 
 def main():
     # Load environment variables
     load_dotenv()
 
-    endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-    api_key = os.getenv("AZURE_OPENAI_API_KEY")
-    model_deployment = os.getenv("MODEL_DEPLOYMENT")
+    endpoint = os.getenv("AZURE_OPENAI_ENDPOINT") # OpenAI endpoint
+    api_key = os.getenv("AZURE_OPENAI_API_KEY") # API Key
+    model_deployment = os.getenv("MODEL_DEPLOYMENT") # Model Name
 
     if not endpoint or not api_key or not model_deployment:
         raise ValueError("Missing AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, or MODEL_DEPLOYMENT in .env")

@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 # import namespaces
-from azure.identity import DefaultAzureCredential
+from azure.core.credentials import AzureKeyCredential
 from azure.ai.textanalytics import TextAnalyticsClient
 
 
@@ -14,12 +14,14 @@ def main():
         # Get Configuration Settings
         load_dotenv()
         foundry_endpoint = os.getenv('FOUNDRY_ENDPOINT')
+        api_key = os.getenv('AZURE_OPENAI_API_KEY')   # Store your API key in .env
+        print("Using endpoint:", foundry_endpoint)  # Debug check
 
-
-        # Create client using endpoint
-        credential = DefaultAzureCredential()
-        ai_client = TextAnalyticsClient(endpoint=foundry_endpoint, credential=credential)
-
+        # Create client using API key
+        ai_client = TextAnalyticsClient(
+            endpoint=foundry_endpoint,
+            credential=AzureKeyCredential(api_key)
+        )
 
         # Analyze each text file in the reviews folder
         reviews_folder = 'reviews'
@@ -33,16 +35,12 @@ def main():
             detectedLanguage = ai_client.detect_language(documents=[text])[0]
             print('\nLanguage: {}'.format(detectedLanguage.primary_language.name))
 
-
-
             # Get entities
             entities = ai_client.recognize_entities(documents=[text])[0].entities
             if len(entities) > 0:
                 print("\nEntities")
                 for entity in entities:
                     print('\t{} ({})'.format(entity.text, entity.category))
-
-
 
             # Get PII
             pii_result = ai_client.recognize_pii_entities(documents=[text])[0]
@@ -52,8 +50,6 @@ def main():
                 for pii_entity in pii_entities:
                     print('\t{} ({})'.format(pii_entity.text, pii_entity.category))
                 print("Redacted Text:\n {}".format(pii_result.redacted_text))
-
-
 
     except Exception as ex:
         print(ex)

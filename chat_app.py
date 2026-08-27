@@ -18,13 +18,13 @@ def main():
             raise ValueError("Missing AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, or MODEL_DEPLOYMENT in .env")
 
         # Initialize Azure OpenAI client
-        openai_client = OpenAI(
+        client1 = OpenAI(
             base_url=endpoint,
             api_key=api_key
         )
 
         while True:
-            input_text = input("\nEnter a prompt (or type 'quit' to exit): ").strip()
+            input_text = input("\nEnter a prompt (or type 'quit' to exit): ").strip() # What is LLM?
 
             if input_text.lower() == "quit":
                 break
@@ -33,16 +33,19 @@ def main():
                 print("Please enter a prompt.")
                 continue
 
-            response = openai_client.chat.completions.create(
-                model=model_deployment,
+            # Responses and Chat Completions
+            # client.responses.create()
+            # Stateful - array of messages
+            response1 = client1.chat.completions.create(
+                model=model_deployment, #gpt-5.6-sol
                 messages=[
                     {"role": "system", "content": "You are a helpful AI assistant."},
-                    {"role": "user", "content": input_text}
+                    {"role": "user", "content": input_text} #What is LLM?
                 ]
             )
 
             print("\nAssistant:")
-            print(response.choices[0].message.content)
+            print(response1.choices[0].message.content)
 
     except Exception as ex:
         print(f"Error: {ex}")
