@@ -1,0 +1,21 @@
+Banking Customer Service Policy
+
+1. Account Opening
+Customers must provide valid identity and address proof
+to open a savings account.
+
+2. UPI Transactions
+Customers should check their bank's official UPI transaction
+limits because limits may differ by bank and account type.
+
+3. Reporting Fraud
+Customers should immediately report unauthorized transactions
+through their bank's official fraud reporting channel.
+
+4. Customer Support
+Customers should use the official bank website or mobile
+application to find customer support contact information.
+
+5. Security
+Customers must never share their PIN, OTP, password, or
+complete card security details with anyone.

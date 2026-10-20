@@ -21,7 +21,7 @@ def main():
         model=model_deployment,
         input="Search the web for the latest news about generative AI apps.",
         tools=[{"type": "web_search"}],  # <-- web_search tool enabled
-        max_output_tokens=500  # Limit the output tokens for brevity
+        #max_output_tokens=500  # Limit the output tokens for brevity
     )
 
     print(response.output_text)
