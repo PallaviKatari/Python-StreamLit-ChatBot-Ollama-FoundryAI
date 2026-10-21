@@ -5,8 +5,8 @@ from openai import OpenAI
 # Azure AI Foundry endpoint
 endpoint = ""
 
-# Your deployment name
-deployment_name = "gpt-image-2"
+# Your deployment name - gpt-image-2
+deployment_name = ""
 
 # Replace with your actual API key
 api_key = ""

@@ -6,7 +6,7 @@ from openai import OpenAI
 endpoint = ""
 
 # Your deployment name
-deployment_name = "gpt-image-2"
+deployment_name = ""
 
 # Replace with your actual API key
 api_key = ""
