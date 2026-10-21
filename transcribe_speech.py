@@ -16,7 +16,7 @@ def main():
         endpoint = os.getenv("FOUNDRY_ENDPOINT")
         model_deployment = os.getenv("MODEL_NAME1")   # e.g., gpt-4o-transcribe
         api_key = os.getenv("AZURE_OPENAI_API_KEY")   # store your key in .env
-        file_path = Path(__file__).parent / "kpmg.mp3"
+        file_path = Path(__file__).parent / "20261021085834_b6a822d5.mp3"
         
         # Play the speech file
         playsound(file_path)

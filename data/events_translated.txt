@@ -1,0 +1,9 @@
+pluie de météores des quadrantides|meteor_shower|01-03|north_america ; Europe ; Asie
+Éclipse solaire annulaire|éclipse|02-17|south_america ; Afrique ; Antarctique
+Éclipse lunaire totale|03-03|north_america ; Europe ; Afrique
+pluie de météores des Lyrides|meteor_shower|04-22|north_america ; Europe ; Asie
+Conjonction Jupiter-Vénus|conjonction|05-01|north_america ; south_america ; Europe ; Asie ; Afrique ; Australie
+Conjonction Saturne-Mars|conjonction|07-10|north_america ; south_america ; Europe ; Asie ; Afrique ; Australie
+Éclipse solaire partielle|éclipse|08-12|Europe ; Afrique
+pluie de météores des Perséides|meteor_shower|08-12|north_america ; Europe ; Asie
+pluie de météores des géminidés|meteor_shower|12-14|north_america ; south_america ; Europe ; Asie ; Afrique ; Australie

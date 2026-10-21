@@ -13,7 +13,7 @@ api_key = ""
 
 # Initialize client with API key
 client = OpenAI(
-    base_url=endpoint,
+    base_url=f"{endpoint}/openai/v1/",
     api_key=api_key
 )
 

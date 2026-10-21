@@ -16,7 +16,7 @@ def main():
         endpoint = os.getenv("FOUNDRY_ENDPOINT")
         model_deployment = os.getenv("MODEL_NAME")   # e.g., gpt-4o-mini-tts
         api_key = os.getenv("AZURE_OPENAI_API_KEY")  # store your key in .env
-        speech_file_path = Path(__file__).parent / "kpmg.mp3"
+        speech_file_path = Path(__file__).parent / "ai103-speech.mp3"
 
         # Create the Azure OpenAI client using API key
         client = AzureOpenAI(
@@ -29,7 +29,7 @@ def main():
         with client.audio.speech.with_streaming_response.create(
             model=model_deployment,
             voice="alloy",
-            input="Hi KPMG Participants.. Welcome to the Azure AI Foundry demo. This is a text-to-speech example using the OpenAI API.",
+            input="Hi AI103 Participants.. Welcome to the Azure AI Foundry demo. This is a text-to-speech example using the OpenAI API.",
             instructions="Speak in a serious tone.",
         ) as response:
             response.stream_to_file(speech_file_path)
