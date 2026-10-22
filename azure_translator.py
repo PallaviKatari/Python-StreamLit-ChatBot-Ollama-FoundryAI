@@ -10,7 +10,7 @@ def translate_text(text, targets, source_language):
         "Ocp-Apim-Subscription-Key": SUBSCRIPTION_KEY,
         "Content-Type": "application/json"
     }
-    url = f"{ENDPOINT}/translator/text/translate?api-version={API_VERSION}"
+    url = ""
     body = {
         "inputs": [
             {

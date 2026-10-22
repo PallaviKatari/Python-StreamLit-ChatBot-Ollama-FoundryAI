@@ -11,7 +11,7 @@ SUBSCRIPTION_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 # Azure Translator endpoint
 endpoint = ""
 
-url = f"{endpoint}/translator/document:translate"
+url = f"{endpoint}"
 
 # Request headers
 headers = {
